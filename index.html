@@ -1,1 +1,64 @@
-Hello world!
+<style>
+
+    body {
+        font-family: IBM, Boing, Rubik, sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+    color: white;
+    }
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h5 class=" site-heading my-4 mt-3 text-white"> 
+  Hey! I'm Sammy (Let's keep our relationship on first name basis for now) 👋 <br> <br>
+   &nbsp&nbsp I'm a software developer, sometimes a data engineer and rarely a startup creator.
+  I currently live in between Bratislava-Slovakia  <img src="https://flagcdn.com/48x36/sk.png">, 
+  Prague-Czech Republic <img src="https://flagcdn.com/48x36/cz.png">, 
+  Malaga and other andalusia cities in Spain. <img src="https://flagcdn.com/48x36/es.png"> <br><br>&nbsp&nbsp&nbsp
+  I have been building APIs and tools for Data Science, Machine Learning and data systems,data pipelines with different teams and organizations around the world. 🌎 <br> <br>
+    &nbsp&nbsp I am a super slow (need to read 3-4 books on a subject, watch at least a video to grasp a complex concept on average) learner but once I get the concepts I can fall in love with creating something meaningful and share it with others. 🚀 <br><br>
+&nbsp&nbsp 
+    I like to build things with Python's vast ecosystem Deep Learning/Machine Learning, distributed systems, SQL and NoSQL databases, Docker, JavaScript(sometimes TypeScript), modern backend APIs, and modern frontend frameworks. 🤖 
+<br><br> &nbsp&nbsp 
+    This blog site however is dedicated for recording my super crazy Tech journey and creation of fully functionnal startups from scratch from the summer of 2022 until the summer of 2023 🤓
+    <br><br> &nbsp&nbsp Join me on my exciting, crazy and fun journey with a cup of coffee at your end. ☕
+<br>
+<iframe src="https://giphy.com/embed/USV0ym3bVWQJJmNu3N" width="100" height="100" frameBorder="0" class="giphy-embe    d" allowFullScreen></iframe>
+</h5>
+&nbsp
+            </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
+ <div class="row">
+ <!-- Blog Entries Column -->
+ <div class="col-md-7 mt-6 right"> 
+      {% for post in post_list %}
+        <div class="card mb-4">
+        <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+   <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+   <p class="card-text">{{ post.content| safe }}</p>
+  <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+  </div>
+
+     </div>
+        {% endfor %}
+   </div>
+         </div>
+    </div>
